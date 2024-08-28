@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forbidden Hotdog (FOHO)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="top-bar">
+                <div class="contract-address" id="contractAddress" onclick="copyToClipboard()">ca: 8qwmmNaFzQVtPTdrQS6G66qnnFoMrnaiQSM2LYnhpump</div>
+                <div class="top-links">
+                    <a href="#">Twitter</a>
+                    <a href="#">Telegram</a>
+                    <a href="#">DexS</a>
+                </div>
+            </div>
+            <h1 class="logo">FORBIDDEN HOTDOG</h1>
+        </header>
+        <main>
+            <div class="headline">
+                <button class="buy-button">Buy $FOHO</button>
+                <h2>FOHO! FOHO! FOHO!</h2>
+            </div>
+            <div class="description">
+                <p>Look into my eyes you baby fucking gorilla I'm going to show up when you least expect it and all they're gonna hear is the muffled screams of FOHO! FOHO! FOHO! as I enter you repeatedly</p>
+            </div>
+        </main>
+    </div>
+    <script>
+        function copyToClipboard() {
+            const addressElement = document.getElementById("contractAddress");
+            const address = addressElement.textContent.split(": ")[1];
+            navigator.clipboard.writeText(address).then(function() {
+                addressElement.textContent = "Copied!";
+                setTimeout(function() {
+                    addressElement.textContent = "ca: " + address;
+                }, 2000); // Revert after 2 seconds
+            }, function(err) {
+                console.error("Failed to copy text: ", err);
+            });
+        }
+    </script>
+</body>
+</html>
